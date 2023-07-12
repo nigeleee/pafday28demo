@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<body>
+    <h1>Pokedex Search</h1>
+    <form th:action="@{/search}" method="get">
+        <input type="text" name="name">
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    <table>
+        <tr th:each="type : ${typeList}">
+            <td>
+                <a th:href="@{/pokemon/{type}(type=${type})}">
+                    <span th:text="${type}"></span>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

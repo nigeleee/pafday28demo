@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Results:</h1>
+    <div th:each="r: ${result}">
+        <img th:src="@{*{r.img}}" >
+        <ul>
+            <li>Name:
+                <span th:text="*{r.name}"></span>
+            </li>
+            <li>Type:
+                <span th:text="*{r.type}"></span>
+            </li>
+            <li>
+                Stats:
+                <span th:text="*{r.stats}"></span>
+            </li>
+        </ul>
+        
+    </div>
+</body>
+</html>
